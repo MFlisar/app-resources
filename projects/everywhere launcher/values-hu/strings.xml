@@ -1,41 +1,5 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="settings_enable_advanced_logging">Haladó naplózás engedélyezése</string>
-    <string name="edit">szerkesztés</string>
-    <!-- ********* -->
-    <!-- TUTORIALS -->
-    <!-- ********* -->
-    <!-- ********* -->
-    <!-- INFOS -->
-    <!-- ********* -->
-    <!--
-    <string name="action_application_details_settings">action_application_details_settings</string>-->
-    <!--
-    <string name="action_app_notification_settings">action_app_notification_settings</string>-->
-    <!--
-    <string name="action_channel_notification_settings">action_channel_notification_settings</string>-->
-    <!--
-    <string name="action_fingerprint_enroll">action_fingerprint_enroll</string>-->
-    <!--
-    <string name="action_ignore_background_data_restrictions_settings">action_ignore_background_data_restrictions_settings</string>-->
-    <!--
-    <string name="action_night_display_settings">action_night_display_settings</string>-->
-    <!--
-    <string name="action_quick_launch_settings">action_quick_launch_settings</string>-->
-    <!--
-    <string name="action_request_ignore_battery_optimizations">action_request_ignore_battery_optimizations</string>-->
-    <!--
-    <string name="action_request_set_autofill_service">action_request_set_autofill_service</string>-->
-    <!--
-    <string name="action_show_regulatory_info">action_show_regulatory_info</string>-->
-    <!--
-    <string name="action_storage_volume_access_settings">action_storage_volume_access_settings</string>-->
-    <!--
-    <string name="action_user_dictionary_settings">action_user_dictionary_settings</string>-->
-    <!--
-    <string name="action_voice_control_airplane_mode">action_voice_control_airplane_mode</string>-->
-    <!--
-    <string name="action_voice_control_battery_saver_mode">action_voice_control_battery_saver_mode</string>-->
-    <!--
-    <string name="action_voice_control_do_not_disturb_mode">action_voice_control_do_not_disturb_mode</string>-->
+  <string name="settings_enable_advanced_logging">Haladó naplózás engedélyezése</string>
+  <string name="edit">szerkesztés</string>
 </resources>

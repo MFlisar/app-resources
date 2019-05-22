@@ -1,94 +1,58 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="settings_hide_notification_icon">Bildirim simgesini gizle</string>
-    <string name="settings_disable_notification">Bu uygulamanın hizmet bildirimini tamamen devre dışı bırak</string>
-    <string name="settings_sections">Bölümler (yalnızca tüm uygulamalar için!)</string>
-    <string name="settings_search">Aranıyor (yalnızca tüm/son uygulamalar için!)</string>
-    <string name="settings_export">Gönder</string>
-    <string name="settings_import">Al</string>
-    <string name="settings_enable_beta_functions">Beta işlevlerini etkinleştir</string>
-    <string name="settings_sidebar_columns">Sütunlar (sol/sağ kenar çubukları)</string>
-    <string name="settings_sidebar_rows">Satırlar (üst/alt kenar çubukları)</string>
-    <string name="settings_sidebar_text_size">Metin boyutu</string>
-    <string name="settings_sidebar_text_lines">Metin satırları</string>
-    <string name="settings_sidepage_cols_rows">Izgara boyutu</string>
-    <string name="settings_sidepage_rows_portrait">Dikey satırlar</string>
-    <string name="settings_sidepage_cols_portrait">Dikey sütunlar</string>
-    <string name="dlg_delete_sidebar_text">Bu kenar çubuğunu gerçekten silmek istiyor musunuz? Bu kenar çubuğunun tüm ayarlarını kaybedeceksiniz.</string>
-    <string name="dlg_delete_action_title">İşlemi sil</string>
-    <string name="dlg_delete_action_text">Bu eylemi gerçekten silmek istiyor musunuz?</string>
-    <string name="dlg_delete_folder_title">Klasörü sil</string>
-    <string name="dlg_delete_app_item_text">Bu uygulamayı gerçekten silmek istiyor musunuz?</string>
-    <string name="folder_style">Klasör stili</string>
-    <string name="folder_style_folder">Klasör</string>
-    <string name="folder_style_stack">Yığınla</string>
-    <string name="folder_style_tile">Desen</string>
-    <string name="folder_style_rounded_tile">Yuvarlak desen (Piksel)</string>
-    <string name="handle_visibility">Görünürlüğü kullan</string>
-    <string name="handle_visibility_always">Her zaman</string>
-    <string name="export_import">Dışa aktar/İçe aktar</string>
-    <string name="popup_app_uninstall">Kaldır</string>
-    <string name="popup_app_playstore">Play Store</string>
-    <string name="popup_custom_symbol_options">Sembol seçenekleri</string>
-    <string name="popup_remove_folder">Klasörü kaldır</string>
-    <string name="popup_remove">Sil</string>
-    <string name="popup_edit">Düzenle</string>
-    <string name="reset_postion">Konumu sıfırla</string>
-    <string name="set_sticky">Sticky (yapışkan) oluştur</string>
-    <string name="delete">Sil</string>
-    <string name="back">Geri</string>
-    <string name="cancel">İptal</string>
-    <string name="ok">Tamam</string>
-    <string name="language_english">İngilizce</string>
-    <string name="language_spanish">İspanyolca</string>
-    <string name="language_german">Almanca</string>
-    <string name="language_chinese">Çince</string>
-    <string name="overlay_mode_title">Yer paylaşım modu</string>
-    <string name="setup_handles">Kurulum Yolları</string>
-    <string name="setup_sidebars">Kenar çubuklarını/sayfalarını ayarlayın</string>
-    <string name="setup_launcher">Kurulum Başlatıcısı</string>
-    <string name="settings_layout_viewpager">Görüntü sayfalayıcısını kullan</string>
-    <string name="settings_group_alternative">Alternatif gruplama kullan</string>
-    <string name="sidebar_sort_mode_manually">El ile</string>
-    <string name="setting_launcher_drawer_cols">Sütunlar</string>
-    <string name="setting_launcher_drawer_accent_color">Vurgu rengi</string>
-    <string name="setting_launcher_drawer_searchbar_at_bottom">Arama çubuğu en altta</string>
-    <string name="setting_launcher_pixelbar_weather">Hava durumunu göster</string>
-    <string name="edit">Düzenle</string>
-    <!-- ********* -->
-    <!-- TUTORIALS -->
-    <!-- ********* -->
-    <!-- ********* -->
-    <!-- INFOS -->
-    <!-- ********* -->
-    <!--
-    <string name="action_application_details_settings">action_application_details_settings</string>-->
-    <!--
-    <string name="action_app_notification_settings">action_app_notification_settings</string>-->
-    <!--
-    <string name="action_channel_notification_settings">action_channel_notification_settings</string>-->
-    <!--
-    <string name="action_fingerprint_enroll">action_fingerprint_enroll</string>-->
-    <!--
-    <string name="action_ignore_background_data_restrictions_settings">action_ignore_background_data_restrictions_settings</string>-->
-    <!--
-    <string name="action_night_display_settings">action_night_display_settings</string>-->
-    <!--
-    <string name="action_quick_launch_settings">action_quick_launch_settings</string>-->
-    <!--
-    <string name="action_request_ignore_battery_optimizations">action_request_ignore_battery_optimizations</string>-->
-    <!--
-    <string name="action_request_set_autofill_service">action_request_set_autofill_service</string>-->
-    <!--
-    <string name="action_show_regulatory_info">action_show_regulatory_info</string>-->
-    <!--
-    <string name="action_storage_volume_access_settings">action_storage_volume_access_settings</string>-->
-    <!--
-    <string name="action_user_dictionary_settings">action_user_dictionary_settings</string>-->
-    <!--
-    <string name="action_voice_control_airplane_mode">action_voice_control_airplane_mode</string>-->
-    <!--
-    <string name="action_voice_control_battery_saver_mode">action_voice_control_battery_saver_mode</string>-->
-    <!--
-    <string name="action_voice_control_do_not_disturb_mode">action_voice_control_do_not_disturb_mode</string>-->
+  <string name="settings_hide_notification_icon">Bildirim simgesini gizle</string>
+  <string name="settings_disable_notification">Bu uygulamanın hizmet bildirimini tamamen devre dışı bırak</string>
+  <string name="settings_sections">Bölümler (yalnızca tüm uygulamalar için!)</string>
+  <string name="settings_search">Aranıyor (yalnızca tüm/son uygulamalar için!)</string>
+  <string name="settings_export">Gönder</string>
+  <string name="settings_import">Al</string>
+  <string name="settings_enable_beta_functions">Beta işlevlerini etkinleştir</string>
+  <string name="settings_sidebar_columns">Sütunlar (sol/sağ kenar çubukları)</string>
+  <string name="settings_sidebar_rows">Satırlar (üst/alt kenar çubukları)</string>
+  <string name="settings_sidebar_text_size">Metin boyutu</string>
+  <string name="settings_sidebar_text_lines">Metin satırları</string>
+  <string name="settings_sidepage_cols_rows">Izgara boyutu</string>
+  <string name="settings_sidepage_rows_portrait">Dikey satırlar</string>
+  <string name="settings_sidepage_cols_portrait">Dikey sütunlar</string>
+  <string name="dlg_delete_sidebar_text">Bu kenar çubuğunu gerçekten silmek istiyor musunuz? Bu kenar çubuğunun tüm ayarlarını kaybedeceksiniz.</string>
+  <string name="dlg_delete_action_title">İşlemi sil</string>
+  <string name="dlg_delete_action_text">Bu eylemi gerçekten silmek istiyor musunuz?</string>
+  <string name="dlg_delete_folder_title">Klasörü sil</string>
+  <string name="dlg_delete_app_item_text">Bu uygulamayı gerçekten silmek istiyor musunuz?</string>
+  <string name="folder_style">Klasör stili</string>
+  <string name="folder_style_folder">Klasör</string>
+  <string name="folder_style_stack">Yığınla</string>
+  <string name="folder_style_tile">Desen</string>
+  <string name="folder_style_rounded_tile">Yuvarlak desen (Piksel)</string>
+  <string name="handle_visibility">Görünürlüğü kullan</string>
+  <string name="handle_visibility_always">Her zaman</string>
+  <string name="export_import">Dışa aktar/İçe aktar</string>
+  <string name="popup_app_uninstall">Kaldır</string>
+  <string name="popup_app_playstore">Play Store</string>
+  <string name="popup_custom_symbol_options">Sembol seçenekleri</string>
+  <string name="popup_remove_folder">Klasörü kaldır</string>
+  <string name="popup_remove">Sil</string>
+  <string name="popup_edit">Düzenle</string>
+  <string name="reset_postion">Konumu sıfırla</string>
+  <string name="set_sticky">Sticky (yapışkan) oluştur</string>
+  <string name="delete">Sil</string>
+  <string name="back">Geri</string>
+  <string name="cancel">İptal</string>
+  <string name="ok">Tamam</string>
+  <string name="language_english">İngilizce</string>
+  <string name="language_spanish">İspanyolca</string>
+  <string name="language_german">Almanca</string>
+  <string name="language_chinese">Çince</string>
+  <string name="overlay_mode_title">Yer paylaşım modu</string>
+  <string name="setup_handles">Kurulum Yolları</string>
+  <string name="setup_sidebars">Kenar çubuklarını/sayfalarını ayarlayın</string>
+  <string name="setup_launcher">Kurulum Başlatıcısı</string>
+  <string name="settings_layout_viewpager">Görüntü sayfalayıcısını kullan</string>
+  <string name="settings_group_alternative">Alternatif gruplama kullan</string>
+  <string name="sidebar_sort_mode_manually">El ile</string>
+  <string name="setting_launcher_drawer_cols">Sütunlar</string>
+  <string name="setting_launcher_drawer_accent_color">Vurgu rengi</string>
+  <string name="setting_launcher_drawer_searchbar_at_bottom">Arama çubuğu en altta</string>
+  <string name="setting_launcher_pixelbar_weather">Hava durumunu göster</string>
+  <string name="edit">Düzenle</string>
 </resources>
