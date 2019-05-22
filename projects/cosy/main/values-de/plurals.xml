@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <plurals name="new_contact_image">
+        <item quantity="zero">Kein neues Kontaktbild</item>
+        <item quantity="one">%d neues Kontaktbild</item>
+        <item quantity="other">%d neue Kontaktbilder</item>
+    </plurals>
+
+    <plurals name="contacts3">
+        <item quantity="zero">%d Kontakten</item>
+        <item quantity="one">%d Kontakt</item>
+        <item quantity="other">%d Kontakten</item>
+    </plurals>
+
+    <plurals name="has_been">
+        <item quantity="zero">wurden</item>
+        <item quantity="one">wurde</item>
+        <item quantity="other">wurden</item>
+    </plurals>
+
+</resources>
