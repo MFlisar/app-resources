@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CoSy für Facebook</string>
+    <string name="app_name_in_app">CoSy für Facebook</string>
+    <string name="app_description"><b>Co</b>ntact <b>Sy</b>nc für Facebook</string>
+
+    <!--<string name="privacy_information_title">Privatsphäre Info</string>-->
+    <!--<string name="privacy_information_text_multi"><![CDATA[Diese Anwendung importiert eine Liste all deiner Freunde welche folgende Daten beinhaltet falls du fortfährst:<br/><ul><li>Den Profillink des Freundes</li><li>Die öffentliche ID des Freundes</li><li>Den Namen des Freundes</li></ul><br/>All diese Daten werden nicht gesammelt und werden nur lokal auf deinem Handy gespeichert. Die Daten werden nur genutzt um das öffentliche Profilbild deiner Freunde herunterladen zu können.]]></string>-->
+    <!--<string name="privacy_information_text_single"><![CDATA[Diese Anwendung importiert folgende Daten deines Freundes falls du fortfährst:<br/><ul><li>Den Profillink des Freundes</li><li>Die öffentliche ID des Freundes</li><li>Den Namen des Freundes</li></ul><br/>All diese Daten werden nicht gesammelt und werden nur lokal auf deinem Handy gespeichert. Die Daten werden nur genutzt um das öffentliche Profilbild deines Freunde herunterladen zu können.]]></string>-->
+
+</resources>

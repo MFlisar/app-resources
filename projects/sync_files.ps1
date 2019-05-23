@@ -6,6 +6,8 @@
 $projects = New-Object System.Collections.ArrayList
 $projects += [Project]::New($false, "Everywhere Launcher", 	"M:\dev\apps\EverywhereLauncher\app-resources\src\main\res")
 $projects += [Project]::New($false, "CoSy", 				"M:\dev\apps\CoSy\app\src\main\res")
+$projects += [Project]::New($false, "CoSy FB", 				"M:\dev\apps\CoSy\app\src\facebook\res")
+$projects += [Project]::New($false, "CoSy WA", 				"M:\dev\apps\CoSy\app\src\whatsapp\res")
 $projects += [Project]::New($true, "Backup Manager", 		"M:\dev\libraries\backupManager\src\main\res")
 
 # 2) define all valid string files
@@ -113,16 +115,14 @@ $copiedToGithub = 0
 $projects | ForEach { $_.copyFiles($true, $stringFiles, $true, [ref]$copiedToProject, [ref]$copiedToGithub) }
 $projects | ForEach { $_.copyFiles($true, $stringFiles, $false, [ref]$copiedToProject, [ref]$copiedToGithub) }
 PrintCopyInfo $copiedToGithub $copiedToProject
-
 Write-Host "- 2) Found following $($projects.count) project(s):"
 $projects | ForEach { Write-Host "-    $($_.name) - files: $($_.folders.count)" }
 
 # 4) sync all files between project and github repository
+Write-Host "- 3) Synced files"
 $copiedToProject = 0
 $copiedToGithub = 0
 $projects | ForEach { $_.syncProject($stringFiles, $sourceLanguages, $modeOneWaySync, [ref]$copiedToProject, [ref]$copiedToGithub) }
-
-Write-Host "- 3) Synced files"
 PrintCopyInfo $copiedToGithub $copiedToProject
 Write-Host "-------------`n"
 
