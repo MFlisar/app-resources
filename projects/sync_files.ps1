@@ -27,7 +27,7 @@ $sourceLanguages += "en"
 
 $global:root = Get-Location
 $global:debug = $true
-$waitForUserInput = $false
+$waitForUserInput = $true
 $modeOneWaySync = $true
 
 # -------------------------
@@ -116,7 +116,7 @@ $projects | ForEach { $_.copyFiles($true, $stringFiles, $true, [ref]$copiedToPro
 $projects | ForEach { $_.copyFiles($true, $stringFiles, $false, [ref]$copiedToProject, [ref]$copiedToGithub) }
 PrintCopyInfo $copiedToGithub $copiedToProject
 Write-Host "- 2) Found following $($projects.count) project(s):"
-$projects | ForEach { Write-Host "-    $($_.name) - files: $($_.folders.count)" }
+$projects | ForEach { Write-Host "-    $($_.name) - folders: $($_.folders.count)" }
 
 # 4) sync all files between project and github repository
 Write-Host "- 3) Synced files"
