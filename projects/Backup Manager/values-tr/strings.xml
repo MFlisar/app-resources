@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="export_title">Dışar aktar</string>
+    <string name="export_app_started">"%1$s-Dışa aktarım başlatıldı...
+"</string>
+    <string name="export_app_finished">%1$s-Dışa aktarım bitti!</string>
+    <string name="export_app_failed">%1$s-Dışa aktarım şu hatayla başarısız oldu: %2$s</string>
+    <string name="import_title">İçe aktar</string>
+    <string name="import_app_started">%1$s-İçe aktar başlatıldı...</string>
+    <string name="import_app_finished">%1$s-İçe aktarım bitti!</string>
+    <string name="import_app_failed">%1$s-İçe aktarım şu hatayla başarısız oldu: %2$s</string>
+    <string name="exporting_data">Veri dışa aktarılıyor...</string>
+    <string name="importing_data">Veri içe aktarılıyor...</string>
+    <string name="export_finished">Dışa aktarım bitti!</string>
+    <string name="import_finished">İçe aktarım bitti!</string>
+    <string name="share">Paylaş</string>
+    <string name="restart">Uyg. yeniden başlat</string>
+    <string name="export_import">Dışa aktar/İçe aktar</string>
+    <string name="export_data">Veriyi dışa aktar</string>
+    <string name="import_data">Veriyi içe aktar</string>
+    <string name="export_import_api21">Üzgünüz, Dışa aktar/İçe aktar yalnızca Android 5 ve üzerinde çalışır</string>
+</resources>

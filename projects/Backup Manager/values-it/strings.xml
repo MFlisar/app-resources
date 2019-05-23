@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="export_title">Esportazione</string>
+    <string name="export_app_started">%1$s-Esportazione iniziata...</string>
+    <string name="export_app_finished">%1$s-Esportazione conclusa!</string>
+    <string name="export_app_failed">%1$s-Esportazione fallita per il seguente errore:\n%2$s</string>
+    <string name="import_title">Importazione</string>
+    <string name="import_app_started">%1$s-Importazione iniziata...</string>
+    <string name="import_app_finished">%1$s-Importazione conclusa!</string>
+    <string name="import_app_failed">%1$s-Importazione fallita per il seguente errore:\n%2$s</string>
+    <string name="exporting_data">Esportazione dati...</string>
+    <string name="importing_data">Importazione dati...</string>
+    <string name="export_finished">Esportazione conclusa!</string>
+    <string name="import_finished">Importazione conclusa!</string>
+    <string name="share">Condividi</string>
+    <string name="restart">Riavvia l\'applicazione</string>
+    <string name="export_data">Esportazione dati</string>
+    <string name="import_data">Importazione dati</string>
+    <string name="export_import_api21">Mi dispiace, l\'esportazione/importazione funziona solo su android &gt;= 5</string>
+</resources>

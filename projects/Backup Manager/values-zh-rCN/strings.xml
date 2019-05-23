@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="export_title">导出</string>
+    <string name="export_app_started">%1$s-开始导出...</string>
+    <string name="export_app_finished">%1$s-导出完成!</string>
+    <string name="export_app_failed">%1$s-导出失败并出现以下错误:\n%2$s</string>
+    <string name="import_title">导入</string>
+    <string name="import_app_started">%1$s-开始导入...</string>
+    <string name="import_app_finished">%1$s-导入完成!</string>
+    <string name="import_app_failed">%1$s-导入失败，出现以下错误:\n%2$s</string>
+    <string name="exporting_data">导出数据...</string>
+    <string name="importing_data">导入数据...</string>
+    <string name="export_finished">导出完成！</string>
+    <string name="import_finished">导入完成！</string>
+    <string name="share">分享</string>
+    <string name="restart">重新启动应用</string>
+    <string name="export_import">导出/导入</string>
+    <string name="export_data">导出数据</string>
+    <string name="import_data">导入数据</string>
+    <string name="export_import_api21">对不起，导出/导入只适用于android&gt; = 5</string>
+</resources>

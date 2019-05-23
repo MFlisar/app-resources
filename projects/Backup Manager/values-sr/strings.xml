@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="export_title">Izvoženje</string>
+    <string name="export_app_started">%1$s-Započeto izvoženje...</string>
+    <string name="export_app_finished">%1$s-Završeno izvoženje!</string>
+    <string name="export_app_failed">%1$s-Neuspešno izvoženje sa sledećom greškom: %2$s</string>
+    <string name="import_title">Uvoženje</string>
+    <string name="import_app_started">%1$s-Započeto uvoženje...</string>
+    <string name="import_app_finished">%1$s-Završeno uvoženje!</string>
+    <string name="import_app_failed">%1$s-Neuspešno uvoženje sa sledećom greškom: %2$s</string>
+    <string name="exporting_data">Izvženje podataka...</string>
+    <string name="importing_data">Uvoženje podataka...</string>
+    <string name="export_finished">Završeno izvoženje!</string>
+    <string name="import_finished">Završeno uvoženje!</string>
+    <string name="share">Deli</string>
+    <string name="restart">Restartuj aplikaciju</string>
+    <string name="export_import">Izvoženje/Uvoženje</string>
+    <string name="export_data">Izvezi podatke</string>
+    <string name="import_data">Uvezi podatke</string>
+    <string name="export_import_api21">Izvinjavamo se, Izvoženje/Uvoženje radi samo na androidu &gt;= 5</string>
+</resources>
