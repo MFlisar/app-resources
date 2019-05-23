@@ -5,9 +5,9 @@
 # 1) define all projects and libraries
 $projects = New-Object System.Collections.ArrayList
 $projects += [Project]::New($false, "Everywhere Launcher", 	"M:\dev\apps\EverywhereLauncher\app-resources\src\main\res")
-$projects += [Project]::New($false, "CoSy", 				"M:\dev\apps\CoSy\app\src\main\res")
-$projects += [Project]::New($false, "CoSy FB", 				"M:\dev\apps\CoSy\app\src\facebook\res")
-$projects += [Project]::New($false, "CoSy WA", 				"M:\dev\apps\CoSy\app\src\whatsapp\res")
+$projects += [Project]::New($false, "CoSy\main", 			"M:\dev\apps\CoSy\app\src\main\res")
+$projects += [Project]::New($false, "CoSy\facebook", 		"M:\dev\apps\CoSy\app\src\facebook\res")
+$projects += [Project]::New($false, "CoSy\whatsapp", 		"M:\dev\apps\CoSy\app\src\whatsapp\res")
 $projects += [Project]::New($true, "Backup Manager", 		"M:\dev\libraries\backupManager\src\main\res")
 
 # 2) define all valid string files
@@ -125,6 +125,11 @@ $copiedToGithub = 0
 $projects | ForEach { $_.syncProject($stringFiles, $sourceLanguages, $modeOneWaySync, [ref]$copiedToProject, [ref]$copiedToGithub) }
 PrintCopyInfo $copiedToGithub $copiedToProject
 Write-Host "-------------`n"
+
+# IDEE- Übersetzen via github
+# 1) Kopie von englisch machen in richtigem Ordner - eventuell in einem TO_TRANSLATE Ordner?
+# 2) Benutzer übersetzt in diesem File
+# 3) Kopie von TO_TRANSLATE in richtigen Ordner + alle Texte die gleich sind wie der englische löschen -> Problem: Texte könnten wirklich gleich sein => es müsste ein flag geben um das zu markieren
 
 # eventually wait for user input
 if ($waitForUserInput)
