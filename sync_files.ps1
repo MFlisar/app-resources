@@ -4,17 +4,10 @@
 
 # 1) define all projects and libraries
 $projects = New-Object System.Collections.ArrayList
-
-# new ProjectFile('EverywhereLauncher', '261063', 'M:/dev/apps/EverywhereLauncher/app-resources/src/main/res/', 'strings.xml', 'everywherelauncher_strings.xml'),
-# new ProjectFile('CoSy', '261063', 'M:/dev/apps/CoSy/app/src/main/res/', 'strings.xml', 'cosy_strings.xml'),
-# new ProjectFile('CoSy - Facebook', '261063', 'M:/dev/apps/CoSy/app/src/facebook/res/', 'strings.xml', 'cosy_fb_strings.xml'),
-# new ProjectFile('CoSy - WhatsApp', '261063', 'M:/dev/apps/CoSy/app/src/whatsapp/res/', 'strings.xml', 'cosy_wa_strings.xml'),
-# new ProjectFile('BackupManager', '261063', 'M:/dev/libraries/backupManager/src/main/res/', 'strings.xml', 'backupmanager_strings.xml')
-
-$projects += [Project]::New($false, "Everywhere Launcher", 	"M:\dev\apps\EverywhereLauncher\app-resources\src\main\res", 	"261063", "everywherelauncher_")
-$projects += [Project]::New($false, "CoSy\main", 			"M:\dev\apps\CoSy\app\src\main\res", 							"261063", "cosy_")
-$projects += [Project]::New($false, "CoSy\facebook", 		"M:\dev\apps\CoSy\app\src\facebook\res", 						"261063", "cosy_fb_")
-$projects += [Project]::New($false, "CoSy\whatsapp", 		"M:\dev\apps\CoSy\app\src\whatsapp\res", 						"261063", "cosy_wa_")
+#$projects += [Project]::New($false, "Everywhere Launcher", 	"M:\dev\apps\EverywhereLauncher\app-resources\src\main\res", 	"261063", "everywherelauncher_")
+#$projects += [Project]::New($false, "CoSy\main", 			"M:\dev\apps\CoSy\app\src\main\res", 							"261063", "cosy_")
+#$projects += [Project]::New($false, "CoSy\facebook", 		"M:\dev\apps\CoSy\app\src\facebook\res", 						"261063", "cosy_fb_")
+#$projects += [Project]::New($false, "CoSy\whatsapp", 		"M:\dev\apps\CoSy\app\src\whatsapp\res", 						"261063", "cosy_wa_")
 $projects += [Project]::New($true, "Backup Manager", 		"M:\dev\libraries\backupManager\src\main\res", 					"261063", "backupmanager_")
 
 # 2) define all valid string files
@@ -178,14 +171,20 @@ PrintCopyInfo $copiedToGithub $copiedToProject
 # 6) upload/download from onesky
 if ($modeOneWaySync)
 {
+	if ($uploadSourceLanguages -or $uploadNonSourceLanguages) { DEBUG("") }
+	
 	# 6.1) upload all source languages
 	if ($uploadSourceLanguages) { $projects | ForEach { $_.upload($stringFiles, $sourceLanguages, $modeOneWaySync, $false) } }
 	
 	# 6.2) upload all non source languages
 	if ($uploadNonSourceLanguages) { $projects | ForEach { $_.upload($stringFiles, $sourceLanguages, $modeOneWaySync, $true) } }
 	
+	if ($uploadSourceLanguages -or $uploadNonSourceLanguages) { DEBUG("") }
+	
 	# 6.3) download all other languages - we must download all, we don't know if something changes
 	if ($downloadNonSourceLanguages) { $projects | ForEach { $_.download($stringFiles, $sourceLanguages, $modeOneWaySync) } }
+	
+	if ($uploadSourceLanguages -or $uploadNonSourceLanguages) { DEBUG("") }
 	
 	# 6.4) sync from github to projects - only downloaded files
 	if ($downloadNonSourceLanguages)
@@ -356,12 +355,11 @@ class Project
 						DEBUG("[UPLOAD ONESKY] $($this.name): $file | $($folder.name) [$($folder.language)]")
 						
 						$action = "upload"
-						$label = $this.prettyFolderName($folder)
 						$projectId = $this.onyskyProjectId
 						$filePath = $paths.githubPath
 						$oneskyFileName = "$($this.oneskyFilePrefix)$file"
 						$language = $folder.language
-						Write-Host (npm run onesky_script -- $action $label $projectId $filePath $oneskyFileName $language) -Separator `n
+						npm run onesky_script -- $action $projectId $filePath $oneskyFileName $language | Select-Object -Skip 4 | Write-Host
 					}
 				}
 			}
@@ -421,12 +419,11 @@ class Project
 						DEBUG("[DOWNLOAD ONESKY] $($this.name): $file | $($folder.name) [$($folder.language)]")
 						
 						$action = "download"
-						$label = $this.prettyFolderName($folder)
 						$projectId = $this.onyskyProjectId
 						$filePath = $paths.githubPath
 						$oneskyFileName = "$($this.oneskyFilePrefix)$file"
 						$language = $folder.language
-						Write-Host (npm run onesky_script -- $action $label $projectId $filePath $oneskyFileName $language) -Separator `n
+						npm run onesky_script -- $action $projectId $filePath $oneskyFileName $language | Select-Object -Skip 4 | Write-Host
 					}
 				}
 			}

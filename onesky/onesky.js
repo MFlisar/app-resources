@@ -38,16 +38,21 @@ var oneskyKeepStrings = oneskyKeys.oneskyKeepStrings;
  
 // 2) Read parameters
 var action = process.argv[2]; 									// 1: upload/download
-var label = process.argv[3]; 									// 2: some label
-var projectId = process.argv[4]; 								// 3: onesky project id
-var localFilePath = process.argv[5]; 							// 4: full path of local file 
-var oneskyFileName = process.argv[6]; 							// 5: name of onesky file
-var language = getLanguage(process.argv[7], languageMappings); 	// 6: language shortcut
+var projectId = process.argv[3]; 								// 2: onesky project id
+var localFilePath = process.argv[4]; 							// 3: full path of local file 
+var oneskyFileName = process.argv[5]; 							// 4: name of onesky file
+var language = getLanguage(process.argv[6], languageMappings); 	// 5: language shortcut
  
-console.log('Params: ' + action + " | " + projectId + " | " + localFilePath + " | " + oneskyFileName + " | " + language);
+//console.log('Params: ' + action + " | " + projectId + " | " + localFilePath + " | " + oneskyFileName + " | " + language);
+
+var idx = localFilePath.lastIndexOf('\\');
+idx = localFilePath.lastIndexOf('\\', idx - 1);
+idx = localFilePath.lastIndexOf('\\', idx - 1);
+idx = localFilePath.lastIndexOf('\\', idx - 1);
+var shortLocalFilePath = "..\\" + localFilePath.substring(idx + 1, localFilePath.length);
  
- if (action === 'upload') 
- {
+if (action === 'upload') 
+{
 	 // define onesky options
 	 var optionsUpload = {
 		language: language,
@@ -64,16 +69,16 @@ console.log('Params: ' + action + " | " + projectId + " | " + localFilePath + " 
 	onesky.postFile(optionsUpload).then(function(content) {
 		var json = JSON.parse(content);
 		if (json.meta.status >= 200 && json.meta.status < 300) {
-			console.log(label + ": " + localFilePath + " [" + language + " | " + oneskyFileName + "] successfully uploaded!");
+			console.log(shortLocalFilePath + " [" + language + " | " + oneskyFileName + "] successfully uploaded!");
 		} else {
-			console.log(label + ": " + localFilePath + " [" + language + " | " + oneskyFileName + "] - Erroneous response received: " + content);
+			console.log(shortLocalFilePath + " [" + language + " | " + oneskyFileName + "] - Erroneous response received: " + content);
 		}
 	}).catch(function(err) {
-		console.log(label + ": " + localFilePath + " [" + language + " | " + oneskyFileName + "] - Error occurred: " + err);
+		console.log(shortLocalFilePath + " [" + language + " | " + oneskyFileName + "] - Error occurred: " + err);
 	});
- }
- else if (action === 'download')
- {
+}
+else if (action === 'download')
+{
 	// define onesky options
 	 var optionsDownload = {
 		language: language,
@@ -89,41 +94,28 @@ console.log('Params: ' + action + " | " + projectId + " | " + localFilePath + " 
 	onesky.getFile(optionsDownload).then(function(content) {
 		fs.writeFile(localFilePath, content, {encoding: 'utf8', flag: 'w'}, function(err) {
 			if(err) {
-				console.log(label + ": " + localFilePath + " [" + language + " | " + oneskyFileName + "] - Error occurred: " + err);
+				console.log(shortLocalFilePath + " [" + language + " | " + oneskyFileName + "] - Error occurred: " + err);
 			} else {
-				console.log(label + ": " + localFilePath + " [" + language + " | " + oneskyFileName + "] successfully downloaded!");
+				console.log(shortLocalFilePath + " [" + language + " | " + oneskyFileName + "] successfully downloaded!");
 			}
 			
 		}); 
 	}).catch(function(error) {
 	  console.log(error);
 	});
- }
- else
- {
+}
+else
+{
 	console.log('Invalid action received: ' + action);
- }
+}
  
- // -------------------------
- // functions
- // -------------------------
+// -------------------------
+// functions
+// -------------------------
  
 function getLanguage(lang, languageMappings) {
 	if (lang in languageMappings) {
 		return languageMappings[lang];
 	}
-	return lang
+	return lang;
 }
- 
- // -------------------------
- // OLD
- // -------------------------
- 
- // define onesky projects id and res folders which the script should check
-//var projects = [
-//	new ProjectFile('EverywhereLauncher', '261063', 'M:/dev/apps/EverywhereLauncher/app-resources/src/main/res/', 'strings.xml', 'everywherelauncher_strings.xml'),
-//	new ProjectFile('CoSy', '261063', 'M:/dev/apps/CoSy/app/src/main/res/', 'strings.xml', 'cosy_strings.xml'),
-//	new ProjectFile('CoSy - Facebook', '261063', 'M:/dev/apps/CoSy/app/src/facebook/res/', 'strings.xml', 'cosy_fb_strings.xml'),
-//	new ProjectFile('CoSy - WhatsApp', '261063', 'M:/dev/apps/CoSy/app/src/whatsapp/res/', 'strings.xml', 'cosy_wa_strings.xml'),
-//	new ProjectFile('BackupManager', '261063', 'M:/dev/libraries/backupManager/src/main/res/', 'strings.xml', 'backupmanager_strings.xml')
-//;
