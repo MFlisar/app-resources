@@ -117,12 +117,14 @@ $projects | ForEach { $_.loadLanguages($stringFiles, $defaultLanguage) }
 DEBUG("")
 
 # 3) ask user what he wants to do
-Write-Host "`n-------------"
+Write-Host "`n-------------------------"
 Write-Host "- What do you want to do?"
-Write-Host "- [s] Sync        - upload default languages, download non default languages"
-Write-Host "- [d] Download    - download all non default languages"
-Write-Host "- [upload] Upload - upload all files (INCL. non default languages) - DANGEROUS"
-Write-Host "-------------`n"
+Write-Host "-------------------------"
+Write-Host "- [s] sync                   - upload default languages + download non default languages"
+Write-Host "- [d] download               - only download all non default languages"
+Write-Host "- [l] local sync             - only run local syncs"
+Write-Host "- [U] UPLOAD ALL (DANGEROUS) - upload all (INCL. non default languages)"
+Write-Host "-------------------------`n"
 
 $userInput = Read-Host -Prompt 'Selection: '
 
@@ -141,7 +143,11 @@ elseif ($userInput -ieq "d")
 	# download only
 	$downloadNonSourceLanguages = $true
 }
-elseif ($userInput -ieq "upload")
+elseif ($userInput -ieq "l")
+{
+	# local sync only
+}
+elseif ($userInput -eq "U")
 {
 	# upload all
 	$uploadNonSourceLanguages = $true
@@ -178,16 +184,18 @@ if ($modeOneWaySync)
 	# 6.2) upload all non source languages
 	if ($uploadNonSourceLanguages) { $projects | ForEach { $_.upload($stringFiles, $sourceLanguages, $modeOneWaySync, $true) } }
 	
-	# 6.2) download all other languages - we must download all, we don't know if something changes
+	# 6.3) download all other languages - we must download all, we don't know if something changes
 	if ($downloadNonSourceLanguages) { $projects | ForEach { $_.download($stringFiles, $sourceLanguages, $modeOneWaySync) } }
 	
-	# 6.3) sync from github to projects - only downloaded files
-	Write-Host "- 4) Synced files - AFTER up-/download"
-	$copiedToProject = 0
-	$copiedToGithub = 0
-	# TODO
-	#$projects | ForEach { $_.syncProject($stringFiles, $sourceLanguages, $modeOneWaySync, [ref]$copiedToProject, [ref]$copiedToGithub) }
-	PrintCopyInfo $copiedToGithub $copiedToProject
+	# 6.4) sync from github to projects - only downloaded files
+	if ($downloadNonSourceLanguages)
+	{
+		Write-Host "- 4) Synced files - AFTER up-/download"
+		$copiedToProject = 0
+		$copiedToGithub = 0
+		$projects | ForEach { $_.syncProject($stringFiles, $sourceLanguages, $modeOneWaySync, [ref]$copiedToProject, [ref]$copiedToGithub) }
+		PrintCopyInfo $copiedToGithub $copiedToProject
+	}
 }
 else
 {
@@ -332,7 +340,7 @@ class Project
 		# 1) move to onesky directory
 		Set-Location -Path ".\onesky"
 	
-		# 2) upload all sourceLanguages or non sourceLanguages
+		# 2) upload all sourceLanguages or non sourceLanguages - no checks done, we actually don't know if current files have already been uploaded
 		foreach ($folder in $this.folders)
 		{
 			$isSourceLanguage = $sourceLanguages -contains $folder.language			
